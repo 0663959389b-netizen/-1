@@ -1,50 +1,56 @@
-import requests
-import numpy as np
-import pandas as pd
-from faker import Faker
-from tqdm import tqdm
+import requests        # бібліотека для роботи з HTTP-запитами 
+import numpy as np      # бібліотека для роботи з масивами та математичними операціями
+import pandas as pd     # бібліотека для роботи з таблицями
+from faker import Faker # бібліотека для генерації випадкових даних
+from tqdm import tqdm   # бібліотека для відображення індикатора прогресу
 
-# 1) requests — пробуємо отримати сторінку
+
+# 1) Використання бібліотеки requests
 try:
-    print("\n[1] Використання requests:")
-    response = requests.get("https://example.com", timeout=5)
-    print("Статус відповіді:", response.status_code)
+    print("\n[1] Використання requests:")                           # вивід назви блоку
+    response = requests.get("https://example.com", timeout=5)       # надсилаємо запит на сайт
+    print("Статус відповіді:", response.status_code)                # показуємо статус відповіді
 except Exception as e:
-    print("Помилка в requests:", e)
+    print("Помилка в requests:", e)                                 # виводимо помилку, якщо запит не вдався
 
-# 2) numpy — створюємо масив і рахуємо середнє
+
+# 2) Використання бібліотеки numpy
 try:
-    print("\n[2] Використання numpy:")
-    arr = np.array([1, 2, 3, 4, 5])
-    print("Масив:", arr)
-    print("Середнє значення:", np.mean(arr))
+    print("\n[2] Використання numpy:")                              # вивід назви блоку
+    arr = np.array([1, 2, 3, 4, 5])                                 # створюємо масив із чисел
+    print("Масив:", arr)                                            # виводимо масив
+    print("Середнє значення:", np.mean(arr))                        # обчислюємо середнє арифметичне
 except Exception as e:
-    print("Помилка в numpy:", e)
+    print("Помилка в numpy:", e)                                    # якщо виникла помилка — показуємо її
 
-# 3) pandas — створюємо просту таблицю
+
+# 3) Використання бібліотеки pandas
 try:
-    print("\n[3] Використання pandas:")
-    data = {"Ім'я": ["Анна", "Олег", "Марія"], "Вік": [20, 22, 19]}
-    df = pd.DataFrame(data)
-    print(df)
+    print("\n[3] Використання pandas:")                             # вивід назви блоку
+    data = {"Ім'я": ["Анна", "Олег", "Марія"], "Вік": [20, 22, 19]} # створюємо словник із даними
+    df = pd.DataFrame(data)                                         # створюємо таблицю DataFrame з цього словника
+    print(df)                                                       # виводимо таблицю
 except Exception as e:
-    print("Помилка в pandas:", e)
+    print("Помилка в pandas:", e)                                   # якщо помилка — показуємо її
 
-# 4) Faker — генеруємо випадкові імена
+
+# 4) Використання бібліотеки Faker
 try:
-    print("\n[4] Використання Faker:")
-    fake = Faker("uk_UA")
-    for _ in range(3):
-        print("Випадкове ім’я:", fake.name())
+    print("\n[4] Використання Faker:")                              # вивід назви блоку
+    fake = Faker("uk_UA")                                           # створюємо об’єкт Faker для українських даних
+    for _ in range(3):                                              # тричі повторюємо генерацію
+        print("Випадкове ім’я:", fake.name())                       # генеруємо випадкове ім’я
 except Exception as e:
-    print("Помилка у Faker:", e)
+    print("Помилка у Faker:", e)                                    # якщо сталася помилка — показуємо її
 
-# 5) tqdm — показуємо індикатор прогресу
+
+# 5) Використання бібліотеки tqdm
 try:
-    print("\n[5] Використання tqdm:")
-    for i in tqdm(range(5)):
-        pass  # просто показуємо хід циклу
+    print("\n[5] Використання tqdm:")                               # вивід назви блоку
+    for i in tqdm(range(5)):                                        # цикл із 5 ітерацій з індикатором прогресу
+        pass                                                        # просто імітація роботи
 except Exception as e:
-    print("Помилка в tqdm:", e)
+    print("Помилка в tqdm:", e)                                     # якщо щось піде не так — повідомляємо
 
-print("\n=== Кінець виконання програми ===")
+
+print("\n=== Кінець виконання програми ===")                        # фінальне повідомлення про завершення
