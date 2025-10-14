@@ -1,13 +1,13 @@
-import requests        # бібліотека для роботи з HTTP-запитами (отримання сторінок, відправка запитів тощо)
-import numpy as np      # бібліотека для роботи з масивами та математичними операціями над ними
-import pandas as pd     # бібліотека для роботи з таблицями (DataFrame), зручна для аналізу даних
-from faker import Faker # бібліотека для генерації випадкових фіктивних даних (імена, адреси і т.д.)
-from tqdm import tqdm   # бібліотека для відображення індикатора прогресу при виконанні циклів
-from PIL import Image   # бібліотека для роботи та обробки зображень (PIL/Pillow)
-import matplotlib.pyplot as plt  # бібліотека для візуалізації даних (побудова графіків)
-from dotenv import load_dotenv   # бібліотека для завантаження змінних середовища з файлу .env
-import yaml              # бібліотека для роботи з форматом YAML (читання та запис)
-from bs4 import BeautifulSoup   # бібліотека для парсингу і роботи з HTML та XML документами
+import requests        
+import numpy as np      
+import pandas as pd     
+from faker import Faker 
+from tqdm import tqdm   
+from PIL import Image   
+import matplotlib.pyplot as plt  
+from dotenv import load_dotenv   
+import yaml              
+from bs4 import BeautifulSoup   
 
 # 1. requests — отримуємо сторінку
 try:
