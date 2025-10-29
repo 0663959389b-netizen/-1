@@ -1,9 +1,9 @@
-def log_exceptions(func):
-    def wrapper(*args, **kwargs):
-        try:
-            return func(*args, **kwargs)
-        except Exception as e:
-            with open("errors.log", "a", encoding="utf-8") as f:
-                f.write(f"Помилка у функції {func.__name__}: {e}\n")
-            raise  # піднімаємо помилку далі
-    return wrapper
+def log_exceptions(func):  # Визначає декоратор для логування виключень у функціях
+    def wrapper(*args, **kwargs):  # Внутрішня функція-обгортка яка приймає будь-які аргументи функції
+        try:  # Починаємо блок для відловлювання помилок
+            return func(*args, **kwargs)  # Викликає оригінальну функцію з переданими аргументами
+        except Exception as e:  # В разі виникнення будь-якої помилки
+            with open("errors.log", "a", encoding="utf-8") as f:  # Відкриває файл для додавання логів
+                f.write(f"Помилка у функції {func.__name__}: {e}\n")  # Записує повідомлення про помилку у файл
+            raise  # Повторно піднімає виняток, щоб його можна було обробити далі
+    return wrapper  # Повертає обгорнуту функцію, яка додатково логуватиме помилки
